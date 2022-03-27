@@ -81,7 +81,7 @@ body{
     content: "";
     top: 34%;
     left: -75%;
-    animation: waves 10s infinite linear;
+    animation: waves 4s infinite linear;
     transform: translate3d(0, 0%, 0) rotate(0deg);
 }
 
