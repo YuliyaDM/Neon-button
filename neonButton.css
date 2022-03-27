@@ -1,0 +1,118 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+}
+
+.wave-btn{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width:280px;
+    height:60px;
+    border-radius: 10px;
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    position: relative;
+}
+
+.wave-btn:hover{
+    border-radius: 10px;
+    box-shadow:0px 0px 50px #ff8349;
+}
+
+.wave-btn__text{
+    position: relative;
+    color: whitesmoke;
+    font-size: 24px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.wave-btn__waves{
+    top: -120%;
+    left: 0;
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background-color: #ff8349;
+    box-shadow:inset 0 0 100px rgba(0,0,0,0.5);
+    transition: all .3s ease 0s;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -ms-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+}
+
+.wave-btn__waves::before,
+.wave-btn__waves::after{
+    position: absolute;
+    width: 250%;
+    height: 250%;
+    content: "";
+    top: 34%;
+    left: -75%;
+    animation: waves 10s infinite linear;
+    transform: translate3d(0, 0%, 0) rotate(0deg);
+}
+
+.wave-btn__waves::before{
+    border-radius: 48%;
+    background-color: rgb(0, 0, 0);
+}
+
+.wave-btn__waves::after{
+    border-radius: 44%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+@keyframes waves{
+    0%{
+        transform:rotate(0deg);
+        -ms-transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+    }
+}
+
+.wave-btn:hover .wave-btn__waves{
+    top: -25%;
+    cursor: pointer;
+}
